@@ -1,5 +1,5 @@
 PROJECT_NAME=skeleton-nextjs
-COMPOSE_FILE=docker/docker-compose.yml
+COMPOSE_FILE=docker-compose.yml
 
 .PHONY: help dev prod build down restart logs clean
 
