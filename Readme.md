@@ -180,6 +180,8 @@ cd my-new-app/nextjs
 
 Edit isi app sesuai kebutuhan.
 
+> Terutama jangan lupa update container_name
+
 Semua infra tetap sama.
 
 ## 🧩 Troubleshooting
