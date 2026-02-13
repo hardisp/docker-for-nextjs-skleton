@@ -1,0 +1,29 @@
+services:
+  nextjs:
+    profiles: ["prod"]
+    container_name: nextjs-app-prod
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    expose:
+      - "3000"
+    networks:
+      - proxy-net
+
+  nextjs-dev:
+    profiles: ["dev"]
+    image: node:20-alpine
+    container_name: nextjs-app-dev
+    working_dir: /app
+    command: npm run dev
+    volumes:
+      - ../nextjs:/app
+      - /app/node_modules
+    ports:
+      - "${APP_PORT}:3000"
+    networks:
+      - proxy-net
+
+networks:
+  proxy-net:
+    external: true
